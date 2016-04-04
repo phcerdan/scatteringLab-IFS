@@ -1,4 +1,7 @@
 build/*
+#vim
+.*.swp
+.*.swo
 # Compiled Object files
 *.slo
 *.lo

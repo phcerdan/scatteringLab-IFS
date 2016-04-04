@@ -46,7 +46,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     #TODO transform arguments to variables
 
-    exe_path=os.path.abspath("C:/Users/bmansel/dev/correlator/build/Debug/sample.exe")
+    exe_path=os.path.abspath("C:/Users/bmansel/dev/scatteringLab-IFS/build/correlator/Debug/sample.exe")
     mode = args.mode
     duration = args.duration
     angle = args.angle
