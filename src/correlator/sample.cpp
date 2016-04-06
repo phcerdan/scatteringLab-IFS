@@ -48,7 +48,7 @@ int main(int argc,  char** argv)
 	int					DurationTime;
 	if (argc < 3) {
 		cout << "mode options: single, quad, dual ; duration seconds" << endl;
-		cout << ".exe single 10" << endl;
+		cout << ".exe 10 single" << endl;
 		return 1;
 	}
 	string inputDurationTime = argv[1];
@@ -68,7 +68,7 @@ int main(int argc,  char** argv)
 		return 1;
 	}
 	std::cout << "Duration Time: " + string(inputDurationTime) <<
-		" ; Operating mode: " + string(inputMode) << endl;
+		" ; Operating mode: " + string(inputMode) << std::endl;
 // Calculate the delay times
 	switch(mode)
 	{
@@ -186,7 +186,7 @@ int main(int argc,  char** argv)
 		Usbfree();
 		FreeLibrary(hDLL);
 		// Display the final correlation function
-		stream = fopen("corr.dat","wt");
+		fopen_s(&stream, "corr.dat","wt");
 		switch(mode)
 		{
 			case FLEXMODE64 :
@@ -236,7 +236,9 @@ int main(int argc,  char** argv)
 				}
 		}
 		fclose(stream);
-	}
+	} else { // load library null
+	cout << "flex02-01dc_win7.dll library not found" << endl;
+ }
 
 	return 0;
 }
