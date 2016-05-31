@@ -153,6 +153,7 @@ int main(int argc,  char** argv)
 		Start(0, 80, 0, "test.dat");
 		ElapsedTime = 0;
 	//runs for DurationTime seconds
+		fopen_s(&stream, "I.dat", "wt"); //brad mod
 		while( ElapsedTime < DurationTime )
 		{
 			// Sleep for a second
@@ -167,6 +168,7 @@ int main(int argc,  char** argv)
 			// Calculate the average intensity for channel A
 			IntensityA = 0;
 			IntensityB = 0;
+			
 			if(tracecnt != 0)
 			{
 				for(i = 0; i<tracecnt; i++)
@@ -178,8 +180,9 @@ int main(int argc,  char** argv)
 			}
 			// Display it
 			cout << "Intensities: " << IntensityA <<" ,"<< IntensityB << endl;
+			fprintf(stream, "%e,%e\n", IntensityA, IntensityB); //brad mod
 		}
-
+		fclose(stream); //brad mod
 	  //stops the correlator
 		Stop();
 	  //Clean up

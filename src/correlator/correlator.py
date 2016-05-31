@@ -27,7 +27,7 @@ def copy_output(c_exe_path, new_filename):
     "Copy output from c executable to a new_filename"
     d = os.path.dirname(c_exe_path)
     # This name depends on hard-coded c script.
-    default_out = os.path.join(d,'corr.dat')
+    default_out = os.path.join(d,'I.dat')
     ensure_dir(new_filename)
     shutil.copy2(default_out, new_filename)
 
