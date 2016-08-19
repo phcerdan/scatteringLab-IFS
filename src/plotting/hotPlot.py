@@ -80,7 +80,7 @@ def AverageDataFolder(base_path,plot_figure=0,flag_write=True):
         #rc('text', usetex=True)
         if I_mat.ndim > 1:
             for c in range(len(I_mat[:,0])):
-                plt.plot(angles,I_mat[c,:],'.',alpha=0.3,label = str(c))
+                plt.plot(angles,I_mat[c,:],'.',alpha=0.3,label = str(c+1))
         #plt.rc('text', usetex=True)
         plt.plot(angles, I_mat_mean, label = 'average')
         plt.yscale('log')
