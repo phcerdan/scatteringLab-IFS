@@ -126,6 +126,7 @@ if __name__ == '__main__':
         normalized_I = numpy.divide(I_mat_mean_smp,I_mat_mean_std)
         normalized_data_out = numpy.array([angles,normalized_I])
         numpy.savetxt(normalized_save_path,numpy.transpose(normalized_data_out))
+        fig_save_loc_name = os.path.join(base_path_smp, 'Normalized_Intensity_vs_Angle.png')        
         plt.figure(3)
         plt.plot(angles, normalized_I,'-o')
         plt.yscale('log')
@@ -135,4 +136,5 @@ if __name__ == '__main__':
         plt.xlabel(r'$\theta$ $[deg.]}$')
         #plt.xlabel(r'$\mathrm{xlabel\;with\;\LaTeX\;font}$')
         plt.ylabel(r'I($\theta$) $[a.u.]$')
+        plt.savefig(fig_save_loc_name, bbox_inches='tight')
         plt.show()      
