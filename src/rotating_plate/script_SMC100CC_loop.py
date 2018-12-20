@@ -6,8 +6,8 @@
 import sys 
 #Command Interface DLL can be found here. 
 print "Adding location of Newport.SMC 100.CommandInterface.dll to sys.path" 
-sys.path.append(r'C:\Program Files (x86)\Newport\MotionControl\SMC100\Bin') 
-#sys.path.append(r'C:\Users\bmansel\dev\MotionControl\SMC100\Bin') 
+#sys.path.append(r'C:\Program Files (x86)\Newport\MotionControl\SMC100\Bin') 
+sys.path.append(r'C:\Users\bwestber\dev\MotionControl\SMC100\Bin') 
 
 #Brad mod
 #===============
@@ -42,17 +42,17 @@ if __name__ == '__main__':
             default=1,
             help='step size for the rotating plate')
     parser.add_argument('--instrument_key', action='store',
-            default='COM6',
+            default='COM4',
             help='Rotating Plate instrument key: COMx')
     parser.add_argument('--num_its', action='store', type=int,
             default=1,
 			help='enter an integer to run the experiment over many times')
     #CORRELATOR OPTIONS
     parser.add_argument('--correlator_script', action='store',
-            default="C:/Users/bmansel/dev/scatteringLab-IFS/src/correlator/correlator.py",
+            default="C:/Users/bwestber/dev/scatteringLab-IFS/src/correlator/correlator.py",
             help='script "correlator.py" which control the correlator')
     parser.add_argument('--out_folder', action='store',
-            default="C:/Users/bmansel/dev/tmp/test1/tol/",
+            default="C:/Users/bwestber/dev/tmp/test1/tol/",
             help='output folder to store results')
     parser.add_argument('--correlator_duration', action='store',
     	    default='10',
@@ -174,6 +174,6 @@ if __name__ == '__main__':
     # Unregister device 
     #SMC.UnregisterComponent(); 
     SMC.CloseInstrument()
-    print "Adding location of Newport.SMC 100.CommandInterface.dll to sys.path" 
-    sys.path.append(r'C:\Users/bmansel/dev/scatteringLab-IFS/src/plotting')	
-    subprocess.call(['python',os.path.abspath('C:/Users/bmansel/dev/scatteringLab-IFS/src/plotting/hotPlot.py'),'--input_path',correlator_out_folder_path])
+    print "Adding location of plotting scripts to sys.path" 
+    sys.path.append(r'C:/Users/bwestber/dev/scatteringLab-IFS/src/plotting')	
+    subprocess.call(['python',os.path.abspath('C:/Users/bwestber/dev/scatteringLab-IFS/src/plotting/hotPlot.py'),'--input_path',correlator_out_folder_path])

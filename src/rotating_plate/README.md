@@ -1,25 +1,16 @@
 # Newport Configuration
 
 Install driver for SMC100 controller, and for the RS232 Adapter
+SMC100CC webpage: https://www.newp rtcom/p/SMC100CC
 
-Install (if not already installed ) Anaconda python.
+The CommandInterface.dll is documented in the official Newport documentation,
+however (at 18 Dec 2018) it cannot be found in their webpage.
+We just re-used the version that we already had from other computer.
 
-If anaconda python is the default, go to command prompt and type:
-pip install pyvisa
-
-[try the python script provided by Newport](http://assets.newport.com/webDocuments-EN/images/NewportPython.zip)
-
-pyvisa is just a wrapper around VISA library. Go download the library from national instruments.
-Choose the latest windows version. (you need an account (free-fake it) to download)
-[nivisa](https://www.ni.com/visa/)
-
-[Test pyvisa:](http://pyvisa.readthedocs.org/en/stable/getting.html)
-test pyvisa with:
-python
-import visa
-rm = visa.ResourceManager()
-print (rm.list_resources())
-
+```
+sys.path.append(r'C:\Program Files (x86)\Newport\MotionControl\SMC100\Bin') 
+clr.AddReferenceToFile('Newport.SMC100.CommandInterface.dll') 
+```
 
 
 YOU NEED IRON PYTHON TO WORK WITH .NET libraries. (PythonNet is not enough)
