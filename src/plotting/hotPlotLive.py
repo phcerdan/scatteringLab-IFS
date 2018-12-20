@@ -46,7 +46,8 @@ def animate_plotting(subdir_path,):
         plt.ylabel(r'I($\theta$) $[a.u.]$')
         
 
-base_path = 'C:\cygdrive\c\Users\bmansel\dev\test2'
+#base_path = 'C:\cygdrive\c\Users\bmansel\dev\test2'
+base_path = 'C:/Users/bwestber/dev/tmp/test1'
 subdir = '1'
 subdir_path = os.path.join(base_path,subdir)
 ani = animation.FuncAnimation(fig, animate_plotting, interval=1000)
